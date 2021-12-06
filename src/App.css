@@ -120,6 +120,9 @@ body, html, #root{
   display: none;
   transition: all 0.4s;
 }
+.page-selector a {
+  text-decoration: none;
+}
 
 
 

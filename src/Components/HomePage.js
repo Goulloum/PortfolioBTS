@@ -53,9 +53,9 @@ function HomePage(){
             </div>
             <div className="page-selector">
 
-                {cardData.map((item, i) => <Link to={"/" + item.link} key={i}><CardHome className="cardhome" key={i} name={item.name} img={item.img}/></Link>)}
+                {cardData.map((item, i) => <a href={"/" + item.link} key={i}><CardHome className="cardhome" key={i} name={item.name} img={item.img}/></a>)}
                 
-
+                
 
 
             </div>
