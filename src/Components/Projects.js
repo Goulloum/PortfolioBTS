@@ -2,7 +2,9 @@
 
 function Projects(){
     return(
-        <div>Projects</div>
+        <div className="projects-container">
+            
+        </div>
     )
 }
 
