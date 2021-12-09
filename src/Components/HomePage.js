@@ -1,8 +1,7 @@
 import CardHome from "./CardHome";
 import $ from 'jquery';
 import {useEffect} from 'react';
-import ReactDOM from "react-dom";
-import { BrowserRouter as Link} from "react-router-dom";
+
 
 
 

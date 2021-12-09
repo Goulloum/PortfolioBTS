@@ -1,8 +1,8 @@
 import HomePage from './Components/HomePage.js';
 import './App.css';
 
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+
+import { Switch, Route, Link, useLocation} from "react-router-dom";
 import About from './Components/About';
 import Projects from './Components/Projects';
 import Skills from './Components/Skills';
@@ -10,9 +10,34 @@ import Veille from './Components/Veille';
 import Contact from './Components/Contact';
 
 function App() {
+
+    let location = useLocation();
+
   return (
-    <Router>
-        {}
+    <>
+        {location.pathname !== "/" ? 
+        <div className="nav-container">
+            <Link to="/">
+                <div className="home-link">Accueil</div>
+            </Link>
+            <Link to="/About">
+                <div className="about-link">Qui suis-je?</div>
+            </Link>
+            <Link to="/Projects">
+                <div className="projects-link">Projets</div>
+            </Link>
+            <Link to="/Skills">
+                <div className="skills-link">Compétences</div>
+            </Link>
+            <Link to="/Veille">
+                <div className="veille-link">Veille</div>
+            </Link>
+            <Link to="/Contact">
+                <div className="contact-link">Contact</div>
+            </Link>
+        </div>
+        
+        : ""}
         <Switch>
             <Route exact path="/">
                 <HomePage />
@@ -33,8 +58,8 @@ function App() {
                 <Contact />
             </Route>
         </Switch>
-
-    </Router>
+    </>
+    
   );
 }
 
