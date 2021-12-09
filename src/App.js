@@ -8,6 +8,7 @@ import Projects from './Components/Projects';
 import Skills from './Components/Skills';
 import Veille from './Components/Veille';
 import Contact from './Components/Contact';
+import ProjectDetails from './Components/ProjectDetails';
 
 function App() {
 
@@ -56,6 +57,9 @@ function App() {
             </Route>
             <Route path="/Contact">
                 <Contact />
+            </Route>
+            <Route path="/Details">
+                <ProjectDetails />
             </Route>
         </Switch>
     </>
