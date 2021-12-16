@@ -13,6 +13,14 @@
 .The-Sky-Grew-Darker-4-hex { color: #138AF2; }
 .The-Sky-Grew-Darker-5-hex { color: #0CF2F2; }
 
+/* Color Theme Swatches in Hex */
+.Fresh-half-slice-of-ripe-orange-fruit-floation-with-splash-drop-on-orange-juice-with-copy-space-1-hex { color: #F2B705; }
+.Fresh-half-slice-of-ripe-orange-fruit-floation-with-splash-drop-on-orange-juice-with-copy-space-2-hex { color: #F29F05; }
+.Fresh-half-slice-of-ripe-orange-fruit-floation-with-splash-drop-on-orange-juice-with-copy-space-3-hex { color: #F28705; }
+.Fresh-half-slice-of-ripe-orange-fruit-floation-with-splash-drop-on-orange-juice-with-copy-space-4-hex { color: #F27405; }
+.Fresh-half-slice-of-ripe-orange-fruit-floation-with-splash-drop-on-orange-juice-with-copy-space-5-hex { color: #F25C05; }
+
+
 
 body, html, #root{
   width: 100%;
@@ -76,7 +84,7 @@ a{
   font-size: 10vh;
   margin-top: 10vh;
   animation-name: arrow-banner;
-  animation-duration: 5s;
+  animation-duration: 3s;
   animation-iteration-count: infinite;
   cursor: pointer;
 }
@@ -91,7 +99,6 @@ a{
 .cardhome-container{
   width: 18vw;
   height: 60vh;
-  background-color: #D5E7F2;
   transition: all 0.4s;
   border-radius: 4px;
   display: flex;
@@ -205,8 +212,70 @@ a{
   font-size: 4vh; 
   margin: 10% 6% 0 6%;
 }
+.projectdetails-container{
+  width: 100%;
+  height: 100%;
 
+}
+.header-projectdetails{
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.project-name{
+  font-size: 7vh;
+  font-family: 'Poppins', sans-serif;
+  color: #D5E7F2;
+  font-weight: 800;
 
+}
+.table-container{
+  margin-left: 5%;
+  width: 25%;
+}
+.table-document-header{
+  width: 100%;
+  height: 5vh;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 3vh;
+}
+.table-document-header div{
+  color: #D5E7F2;
+  color: #cddae2;
+  background-color: #142240;
+  border-radius: 12px 12px 0 0;
+  width: 50%;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+
+}
+.table-document{
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 3px;
+  
+
+}
+.pdf-icon{
+  color: #cb0606;
+  font-size: 3vh;
+  margin-left: 2%;
+}
+.table-document tr div{
+  padding: 3%;
+  width: 100%;
+  font-size: 3vh;
+  font-family: 'Poppins', sans-serif;
+}
 
 
 @keyframes arrow-banner {
