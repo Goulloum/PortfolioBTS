@@ -7,6 +7,7 @@ function CardHome(props){
 
 
     return(
+        
         <div className="cardhome-container" style={containerStyle}>
             <div className="blur"></div>
             <div className="cardhome-title">{props.name}</div>

@@ -1,69 +1,72 @@
-import HomePage from './Components/HomePage.js';
-import './App.css';
+import HomePage from "./Components/HomePage.js";
+import "./App.css";
 
+import { Switch, Route, Link, useLocation } from "react-router-dom";
 
-import { Switch, Route, Link, useLocation} from "react-router-dom";
-import About from './Components/About';
-import Projects from './Components/Projects';
-import Skills from './Components/Skills';
-import Veille from './Components/Veille';
-import Contact from './Components/Contact';
-import ProjectDetails from './Components/ProjectDetails';
+import About from "./Components/About";
+import Projects from "./Components/Projects";
+import Skills from "./Components/Skills";
+import Veille from "./Components/Veille";
+import Contact from "./Components/Contact";
+import ProjectDetails from "./Components/ProjectDetails";
 
 function App() {
-
-    let location = useLocation();
+  let location = useLocation();
 
   return (
     <>
-        {location.pathname !== "/" ? 
+      {location.pathname !== "/" ? (
         <div className="nav-container">
-            <Link to="/">
-                <div className="home-link">Accueil</div>
-            </Link>
-            <Link to="/About">
-                <div className="about-link">Qui suis-je?</div>
-            </Link>
-            <Link to="/Projects">
-                <div className="projects-link">Projets</div>
-            </Link>
-            <Link to="/Skills">
-                <div className="skills-link">Compétences</div>
-            </Link>
-            <Link to="/Veille">
-                <div className="veille-link">Veille</div>
-            </Link>
-            <Link to="/Contact">
-                <div className="contact-link">Contact</div>
-            </Link>
+          <Link to="/">
+            <div className="home-link">Accueil</div>
+          </Link>
+          <Link to="/About">
+            <div className="about-link">Qui suis-je?</div>
+          </Link>
+          <Link to="/Projects">
+            <div className="projects-link">Projets</div>
+          </Link>
+          <Link to="/Skills">
+            <div className="skills-link">Compétences</div>
+          </Link>
+          <Link to="/Veille">
+            <div className="veille-link">Veille</div>
+          </Link>
+          <Link to="/Contact">
+            <div className="contact-link">Contact</div>
+          </Link>
         </div>
-        
-        : ""}
-        <Switch>
+      ) : (
+        ""
+      )}
+
+          <Switch
+          location={location}
+          >
             <Route exact path="/">
-                <HomePage />
+              <HomePage />
             </Route>
             <Route path="/About">
-                <About />
+              <About />
             </Route>
             <Route path="/Projects">
-                <Projects />
+              <Projects />
             </Route>
             <Route path="/Skills">
-                <Skills />
+              <Skills />
             </Route>
             <Route path="/Veille">
-                <Veille />
+              <Veille />
             </Route>
             <Route path="/Contact">
-                <Contact />
+              <Contact />
             </Route>
             <Route path="/Details">
-                <ProjectDetails />
+              <ProjectDetails />
             </Route>
-        </Switch>
+          </Switch>
+
     </>
-    
   );
 }
 
