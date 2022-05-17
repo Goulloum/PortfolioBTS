@@ -7,7 +7,8 @@
         "langages": ["devicon-php-plain", "devicon-javascript-plain", "devicon-mysql-plain-wordmark", "devicon-bash-plain"],
         "date": "15/11/2021",
         "documents": ["extrait_doc_xml.pdf", "liste_taches_parser.pdf"],
-        "productions": ["Facture N°221013075.pdf", "Site+structureBD.pdf"]
+        "productions": ["Facture N°221013075.pdf", "Site+structureBD.pdf"],
+        "type": "Professionelle"
 
     },
     {
@@ -18,7 +19,8 @@
         "langages": ["devicon-php-plain", "devicon-javascript-plain", "devicon-mysql-plain-wordmark", "devicon-bash-plain"],
         "date": "29/09/2021",
         "documents": ["intradata_statusdocument.pdf"],
-        "productions": ["final_visualisation_chorus.pdf"]
+        "productions": ["final_visualisation_chorus.pdf"],
+        "type": "Professionnelle"
 
     }
 ]

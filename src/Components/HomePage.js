@@ -1,5 +1,4 @@
 import CardHome from "./CardHome";
-import { useEffect } from "react";
 import { Link, Element } from "react-scroll";
 import { Link as LinkRoute } from "react-router-dom";
 import { useSpring, animated, easings } from "react-spring";
@@ -140,16 +139,27 @@ function HomePage() {
       <Element name="HomeNavBar">
         <div className="page-selector">
           {cardData.map((item, i) => (
-
-                <LinkRoute to={"/" + item.link}>
-                  {/* <a href={"/" + item.link} key={i}> */}
-                  <CardHome
-                    className="cardhome"
-                    key={i}
-                    name={item.name}
-                    img={item.img}
-                  />
-                </LinkRoute>
+            <LinkRoute to={"/" + item.link}>
+              {/* <a href={"/" + item.link} key={i}> */}
+              <CardHome
+                className="cardhome"
+                key={i}
+                name={item.name}
+                img={item.img}
+              />
+              {/* <div className={"cloud-parent cloud" + i}>
+                <div
+                  className={"cloud-nav-bar"}
+                  key={i}
+                  style={{ transform: "translateX(" + i * 10 + "%)" }}
+                >
+                  <div className="text-cloud-container">
+                  {item.name}
+                  </div>
+                  
+                </div>
+              </div> */}
+            </LinkRoute>
 
             //  </a>
           ))}
