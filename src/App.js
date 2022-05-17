@@ -2,13 +2,14 @@ import HomePage from "./Components/HomePage.js";
 import "./App.css";
 
 import { Switch, Route, Link, useLocation } from "react-router-dom";
-
+import {Element} from 'react-scroll'
 import About from "./Components/About";
 import Projects from "./Components/Projects";
 import Skills from "./Components/Skills";
 import Veille from "./Components/Veille";
 import Contact from "./Components/Contact";
 import ProjectDetails from "./Components/ProjectDetails";
+import BackOffice from "./Components/BackOffice.js";
 
 function App() {
   let location = useLocation();
@@ -63,6 +64,9 @@ function App() {
             </Route>
             <Route path="/Details">
               <ProjectDetails />
+            </Route>
+            <Route path='/Backoffice'>
+              <BackOffice />
             </Route>
           </Switch>
 
