@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -18,6 +18,12 @@ function ProjectDetails() {
 
   return (
     <div className="projectdetails-container">
+      <Link to="/">
+        <div className="return-btn">
+          <span className="material-icons">arrow_back</span> Retour
+        </div>
+      </Link>
+
       <div className="header-projectdetails">
         <div className="project-name">{location.state.name}</div>
       </div>
@@ -26,17 +32,17 @@ function ProjectDetails() {
         <div className="project-description">{location.state.description}</div>
       </div>
       <div className="slider-container">
-          <Slider {...settings} style={{width: "90%", marginLeft: '5%'}}>
-            {location.state.img.map((img, i) => (
-              <img
-                key={i}
-                src={"/files/" + location.state.name + "/imgs/" + img}
-                alt=""
-                className="project-img"
-              />
-            ))}
-          </Slider>
-        </div>
+        <Slider {...settings} style={{ width: "90%", marginLeft: "5%" }}>
+          {location.state.img.map((img, i) => (
+            <img
+              key={i}
+              src={"/files/" + location.state.name + "/imgs/" + img}
+              alt=""
+              className="project-img"
+            />
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 }

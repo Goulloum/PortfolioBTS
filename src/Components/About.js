@@ -32,13 +32,11 @@ function About() {
           />
         </div>
         <div className="about-me-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur,
-          earum quidem ut excepturi culpa quod nihil nam perferendis. Quisquam
-          accusantium consequuntur deserunt nesciunt reprehenderit laborum
-          maxime id debitis quis corrupti. Lorem ipsum, dolor sit amet
-          consectetur adipisicing elit. Porro harum fugiat nobis repudiandae
-          deserunt rem maiores excepturi iste voluptatum. Nesciunt tempore quasi
-          veniam. Perferendis sit praesentium omnis earum nobis sint!
+          <span>Bonjour !</span> <br />
+          Je suis un apprenti developpeur web et je suis en formation dans un
+          BTS SIO en alternance. Mon école est l'ISCIO et je suis actuellement
+          en option SLAM qui est l'option orientée pour les développeurs. Au
+          terme de ce diplôme j'aimerais me lancer en tant que développeur web.
         </div>
       </div>
       <div className="experience-container">
