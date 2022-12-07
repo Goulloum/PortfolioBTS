@@ -70,9 +70,6 @@ function App() {
       <Link smooth={true} to="/Projects">
         <div className="projects-link">Projets</div>
       </Link>
-      <Link smooth={true} to="/Skills">
-        <div className="skills-link">Compétences</div>
-      </Link>
       <Link smooth={true} to="/Veille">
         <div className="veille-link">Veille</div>
       </Link>

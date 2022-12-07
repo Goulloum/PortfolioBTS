@@ -1,8 +1,14 @@
 import FeedlyLogo from "../img/Feedly_Logo.png";
-import { useState } from "react";
+import { useState, useLayoutEffect, useRef } from "react";
+import { useSpring, animated, easings } from "react-spring";
+
 
 function Veille() {
   const [sujetOpen, setSujetOpen] = useState();
+  const domRef = useRef();
+  
+  const [isVisible, setVisible] = useState(false);
+
 
   const handleOpenArticle = (article) => {
       if(sujetOpen !== article){
@@ -11,13 +17,40 @@ function Veille() {
           setSujetOpen()
       }
   }
+
+  const anim = useSpring({
+    from: { x: -1000 },
+    config: { duration: 600, easing: easings.easeOutQuad },
+    loop: {
+      x: isVisible? 0: -1000,
+    },
+  });
+
+  useLayoutEffect(() => {
+    
+      const observer = new IntersectionObserver(entries => {
+        // In your case there's only one element to observe:     
+        
+        setVisible(entries[0].isIntersecting)
+
+      });
+      
+      observer.observe(domRef.current);
+      
+      return () => observer.unobserve(domRef.current);
+    
+
+  
+  
+}, []);
   return (
     <div className="veille-container">
       <div className="main-title-veille">Ma veille informationnelle</div>
       <div className="outils-sources-veille-container">
-        <div className="outils-veille-container">
+        <div className="outils-veille-container" ref={domRef}>
           <div className="outils-veille-title">Outils de veille :</div>
           <ul>
+            <animated.div style={anim}>
             <li>
               FEEDLY
               {/* <img src={FeedlyLogo} alt="LogoFeedly" /> */}
@@ -26,6 +59,8 @@ function Veille() {
                 comme le développement web ou encore la sécurité web
               </div>
             </li>
+            </animated.div>
+            <animated.div style={anim}>
             <li>
               Google Alert
               <div className="li-element-sub-text">
@@ -34,11 +69,14 @@ function Veille() {
                 afin de créer son propre gestionnaire
               </div>
             </li>
+            </animated.div>
           </ul>
         </div>
         <div className="sources-veille-container">
           <div className="sources-veille-title">Sources :</div>
           <ul>
+          <animated.div style={anim}>
+
             <li>
               Youtube
               <div className="li-element-sub-text">
@@ -51,6 +89,9 @@ function Veille() {
                 nouvelles technologies
               </div>
             </li>
+            </animated.div>
+            <animated.div style={anim}>
+
             <li>
               Twitter
               <div className="li-element-sub-text">
@@ -59,6 +100,9 @@ function Veille() {
                 technologies
               </div>
             </li>
+            </animated.div>
+            <animated.div style={anim}>
+
             <li>
               Reddit
               <div className="li-element-sub-text">
@@ -67,6 +111,7 @@ function Veille() {
                 comme le développement web ou les technologies WEB3
               </div>
             </li>
+            </animated.div>
           </ul>
         </div>
       </div>

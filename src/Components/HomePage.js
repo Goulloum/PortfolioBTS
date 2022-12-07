@@ -4,28 +4,7 @@ import { Link as LinkRoute } from "react-router-dom";
 import { useSpring, animated, easings } from "react-spring";
 
 function HomePage() {
-  const cardData = [
-    {
-      name: "Qui suis-je ?",
-      link: "About",
-    },
-    {
-      name: "Projets",
-      link: "Projects",
-    },
-    {
-      name: "Compétences",
-      link: "Skills",
-    },
-    {
-      name: "Veille technologique",
-      link: "Veille",
-    },
-    {
-      name: "Contact",
-      link: "Contact",
-    },
-  ];
+
 
   const anim = useSpring({
     from: { y: -1000 },
