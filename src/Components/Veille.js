@@ -2,47 +2,39 @@ import FeedlyLogo from "../img/Feedly_Logo.png";
 import { useState, useLayoutEffect, useRef } from "react";
 import { useSpring, animated, easings } from "react-spring";
 
-
 function Veille() {
   const [sujetOpen, setSujetOpen] = useState();
   const domRef = useRef();
-  
+
   const [isVisible, setVisible] = useState(false);
 
-
   const handleOpenArticle = (article) => {
-      if(sujetOpen !== article){
-          setSujetOpen(article)
-      }else if(sujetOpen == article){
-          setSujetOpen()
-      }
-  }
+    if (sujetOpen !== article) {
+      setSujetOpen(article);
+    } else if (sujetOpen == article) {
+      setSujetOpen();
+    }
+  };
 
   const anim = useSpring({
     from: { x: -1000 },
     config: { duration: 600, easing: easings.easeOutQuad },
     loop: {
-      x: isVisible? 0: -1000,
+      x: isVisible ? 0 : -1000,
     },
   });
 
   useLayoutEffect(() => {
-    
-      const observer = new IntersectionObserver(entries => {
-        // In your case there's only one element to observe:     
-        
-        setVisible(entries[0].isIntersecting)
+    const observer = new IntersectionObserver((entries) => {
+      // In your case there's only one element to observe:
 
-      });
-      
-      observer.observe(domRef.current);
-      
-      return () => observer.unobserve(domRef.current);
-    
+      setVisible(entries[0].isIntersecting);
+    });
 
-  
-  
-}, []);
+    observer.observe(domRef.current);
+
+    return () => observer.unobserve(domRef.current);
+  }, []);
   return (
     <div className="veille-container">
       <div className="main-title-veille">Ma veille informationnelle</div>
@@ -51,66 +43,63 @@ function Veille() {
           <div className="outils-veille-title">Outils de veille :</div>
           <ul>
             <animated.div style={anim}>
-            <li>
-              FEEDLY
-              {/* <img src={FeedlyLogo} alt="LogoFeedly" /> */}
-              <div className="li-element-sub-text">
-                Un aggregateur de flux RSS qui me permet de suivre certain sujet
-                comme le développement web ou encore la sécurité web
-              </div>
-            </li>
+              <li>
+                FEEDLY
+                {/* <img src={FeedlyLogo} alt="LogoFeedly" /> */}
+                <div className="li-element-sub-text">
+                  Un aggregateur de flux RSS qui me permet de suivre certain
+                  sujet comme le développement web ou encore la sécurité web
+                </div>
+              </li>
             </animated.div>
             <animated.div style={anim}>
-            <li>
-              Google Alert
-              <div className="li-element-sub-text">
-                Un outil permettant de suivre certain mots-clés directemment sur
-                Google et permettant aussi de sortir un flux RSS au format JSON
-                afin de créer son propre gestionnaire
-              </div>
-            </li>
+              <li>
+                Notion
+                <div className="li-element-sub-text">
+                  Un outil permettant d'organiser les articles me semblant
+                  important par rapport aux thèmes de ma veilles
+                  informationnelle afin de pouvoir les retrouver si besoin.
+                </div>
+              </li>
             </animated.div>
           </ul>
         </div>
         <div className="sources-veille-container">
           <div className="sources-veille-title">Sources :</div>
           <ul>
-          <animated.div style={anim}>
-
-            <li>
-              Youtube
-              <div className="li-element-sub-text">
-                Suivi de certaines chaines comme{" "}
-                <a href="https://www.youtube.com/channel/UCWedHS9qKebauVIK2J7383g">
-                  Underscore
-                </a>{" "}
-                ou <a href="https://www.youtube.com/c/Fireship">Fireship</a> qui
-                postent régulièrement du contenu par rapport à l'actualité des
-                nouvelles technologies
-              </div>
-            </li>
+            <animated.div style={anim}>
+              <li>
+                Youtube
+                <div className="li-element-sub-text">
+                  Suivi de certaines chaines comme{" "}
+                  <a href="https://www.youtube.com/channel/UCWedHS9qKebauVIK2J7383g">
+                    Underscore
+                  </a>{" "}
+                  ou <a href="https://www.youtube.com/c/Fireship">Fireship</a>{" "}
+                  qui postent régulièrement du contenu par rapport à l'actualité
+                  des nouvelles technologies
+                </div>
+              </li>
             </animated.div>
             <animated.div style={anim}>
-
-            <li>
-              Twitter
-              <div className="li-element-sub-text">
-                Réseau social permettant de suivre l'actualité mondiale, de
-                suivre certain compte d'atualités spécialisés dans les nouvelles
-                technologies
-              </div>
-            </li>
+              <li>
+                Twitter
+                <div className="li-element-sub-text">
+                  Réseau social permettant de suivre l'actualité mondiale, de
+                  suivre certain compte d'atualités spécialisés dans les
+                  nouvelles technologies
+                </div>
+              </li>
             </animated.div>
             <animated.div style={anim}>
-
-            <li>
-              Reddit
-              <div className="li-element-sub-text">
-                Via son système de communautés, ce réseau social permet de
-                recevoir beaucoup d'actualités centrées sur des sujets précis
-                comme le développement web ou les technologies WEB3
-              </div>
-            </li>
+              <li>
+                Reddit
+                <div className="li-element-sub-text">
+                  Via son système de communautés, ce réseau social permet de
+                  recevoir beaucoup d'actualités centrées sur des sujets précis
+                  comme le développement web ou les technologies WEB3
+                </div>
+              </li>
             </animated.div>
           </ul>
         </div>
@@ -120,39 +109,60 @@ function Veille() {
         <ul>
           <li>
             <div className="top-section-sujet">
-              <div className="btn-open-article" onClick={() => handleOpenArticle(1)}>
-                <span class="material-icons" style={{fontSize: "4vh"}}>{sujetOpen == 1 ?"expand_more": "chevron_right"}</span>
+              <div
+                className="btn-open-article"
+                onClick={() => handleOpenArticle(1)}
+              >
+                <span class="material-icons" style={{ fontSize: "4vh" }}>
+                  {sujetOpen == 1 ? "expand_more" : "chevron_right"}
+                </span>
               </div>
-              <div className="sujet-element-title">WEB3</div>
+              <div className="sujet-element-title">
+                IA dans le développement
+              </div>
             </div>
-            <div className="articles-sujet-container" style={{display: sujetOpen == 1? "block": "none"}}>
+            <div
+              className="articles-sujet-container"
+              style={{ display: sujetOpen == 1 ? "block" : "none" }}
+            >
               <ul>
                 <li>
-                  <a href="https://journalducoin.com/defi/google-revolution-web3-equipe-choc/">GOOGLE NE VEUT PAS RATER LA RÉVOLUTION DU WEB3</a>
+                  <a href="https://www.blogdumoderateur.com/google-devoile-bard/">
+                    Google dévoile Bard
+                  </a>
                   <div className="li-element-sub-text">
-                    Face au développement fulgurant du web 3, Google décide de monter une équipe pour ne pas être laisser dérrière par ses concurrent comme Amazon ou META avec le Meta-verse
+                    En réponse à l'assistant artificiel créé par OpenAI, Goodgle
+                    décide de sortir sa propre IA en développement depuis des
+                    années nommée Bard.
                   </div>
                 </li>
-
               </ul>
             </div>
           </li>
           <li>
             <div className="top-section-sujet">
-              <div className="btn-open-article" onClick={() => handleOpenArticle(2)}>
-                <span class="material-icons" style={{fontSize: "4vh"}}>{sujetOpen == 2 ?"expand_more": "chevron_right"}</span>
+              <div
+                className="btn-open-article"
+                onClick={() => handleOpenArticle(2)}
+              >
+                <span class="material-icons" style={{ fontSize: "4vh" }}>
+                  {sujetOpen == 2 ? "expand_more" : "chevron_right"}
+                </span>
               </div>
-              <div className="sujet-element-title">Cyber-securité</div>
+              <div className="sujet-element-title">Technologies utilisées</div>
             </div>
-            <div className="articles-sujet-container" style={{display: sujetOpen == 2? "block": "none"}}>
+            <div
+              className="articles-sujet-container"
+              style={{ display: sujetOpen == 2 ? "block" : "none" }}
+            >
               <ul>
                 <li>
-                  <a href="https://journalducoin.com/defi/google-revolution-web3-equipe-choc/">Introducing Microsoft Security Experts</a>
+                  <a href="https://php.watch/articles/PHP-8.2">PHP 8.2</a>
                   <div className="li-element-sub-text">
-                    Microsoft dévoile une amélioration à son service Microsoft Security, Microsoft Security Expert
+                    PHP lance sa version 8.2 apportant de nouveaux
+                    fonctionnement au langages.
                   </div>
                 </li>
-                
               </ul>
             </div>
           </li>

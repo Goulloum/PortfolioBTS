@@ -1,0 +1,13 @@
+Nom,Prenom,Mail,Télephone,Adresse,Ville,Code Postale,Formation,Comunnication autorisée ?,Date:Heure
+NomDeFamille1,Prenom1,mail.leleve@inscrit.com,102030405,4 avenue de la fausse adresse,Paris,75001,,0,2023-01-20 09:17:09
+NomDeFamille2,Prenom2,mail.leleve@inscrit.com,102030406,5 avenue de la fausse adresse,Paris,75002,SIO/,1,2023-01-21 09:01:06
+NomDeFamille3,Prenom3,mail.leleve@inscrit.com,102030407,6 avenue de la fausse adresse,Paris,75003,SIO/,0,2023-01-21 09:46:24
+NomDeFamille4,Prenom4,mail.leleve@inscrit.com,102030408,7 avenue de la fausse adresse,Paris,75004,NDRC/,1,2023-01-21 10:10:05
+NomDeFamille5,Prenom5,mail.leleve@inscrit.com,102030409,8 avenue de la fausse adresse,Paris,75005,NDRC/,0,2023-01-21 10:29:05
+NomDeFamille6,Prenom6,mail.leleve@inscrit.com,102030410,9 avenue de la fausse adresse,Paris,75006,NDRC/,1,2023-01-21 10:33:36
+NomDeFamille7,Prenom7,mail.leleve@inscrit.com,102030411,10 avenue de la fausse adresse,Paris,75007,Bachelor DCG/,1,2023-01-21 12:12:53
+NomDeFamille8,Prenom8,mail.leleve@inscrit.com,102030412,11 avenue de la fausse adresse,Paris,75008,SIO/Bachelor Informatique/,1,2023-01-21 13:02:35
+NomDeFamille9,Prenom9,mail.leleve@inscrit.com,102030413,12 avenue de la fausse adresse,Paris,75009,CG/,1,2023-01-21 13:48:45
+NomDeFamille10,Prenom10,mail.leleve@inscrit.com,102030414,13 avenue de la fausse adresse,Paris,75010,SIO/,1,2023-01-21 13:56:38
+NomDeFamille11,Prenom11,mail.leleve@inscrit.com,102030415,14 avenue de la fausse adresse,Paris,75011,MCO/,0,2023-01-21 14:09:39
+NomDeFamille12,Prenom12,mail.leleve@inscrit.com,102030416,15 avenue de la fausse adresse,Paris,75012,MCO/GPME/,1,2023-01-21 14:38:18
