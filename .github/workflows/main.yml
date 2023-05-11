@@ -35,7 +35,7 @@ jobs:
                   username: ${{ secrets.USERNAME }}
                   password: ${{ secrets.PASSWORD }}
                   source: situations.sql
-                  target: /home/ubuntu/docker/portfolio/situations.sql
+                  target: /home/ubuntu/docker/portfolio/
 
             - name: Transfer build.zip to VPS
               uses: appleboy/scp-action@master
@@ -44,7 +44,7 @@ jobs:
                   username: ${{ secrets.USERNAME }}
                   password: ${{ secrets.PASSWORD }}
                   source: build.zip
-                  target: /home/ubuntu/build.zip
+                  target: /home/ubuntu/
 
             - name: Deploy app to VPS
               uses: appleboy/ssh-action@master
