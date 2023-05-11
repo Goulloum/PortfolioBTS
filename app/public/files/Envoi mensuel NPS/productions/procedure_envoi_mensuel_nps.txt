@@ -1,0 +1,27 @@
+Procédure envoi nps tous les mois le 05 du mois
+
+Ici exemple d'envoi le 5 novembre
+
+Séléctionner l'intervalle du 4 du mois précédent jusqu'au 5 du mois actuel
+(exemple si on est le 5 novembre séléctionner du 4 septembre au 5 octobre)
+
+cocher la case pas envoyer au : 5/10/22
+
+pour chacune des listes suivante repeter l'envoi :
+
+							oui    BDP EN COMPTE
+							oui    GROUPE SCOLAIRE LSA
+							oui    BIBLIOTHEQUE EN COMPTE
+							oui    REVENTE COLLECTIVITE EN COMPTE
+							oui    EXPORT EN COMPTE
+
+
+Séléctionner tous le monde et envoyer le mail
+
+séléctionner le template "NPS Proposition mail " et envoyer
+
+celà va mettre à jour la date d'envoi au 5 novembre dans cet exemple
+
+maintenant séléctionner l'intervalle courant soit du 4 octobre au 5 novembre et cocher la case pas envoyer au 5/11
+
+encore pour toutes les listes ci-dessus repeter la procédure d'envoi

@@ -3,7 +3,7 @@ name: Deploy to VPS
 on:
     push:
         branches:
-            - main
+            - master
 
 jobs:
     deploy:
@@ -23,10 +23,14 @@ jobs:
                   npm run build
                   zip -r build.zip build
 
-            - name: Install MySQL client
-              run: |
-                  sudo apt-get update
-                  sudo apt-get install -y mysql-client
+            - name: Transfer sql to VPS
+              uses: appleboy/scp-action@master
+              with:
+                  host: ${{ secrets.HOST }}
+                  username: ${{ secrets.USERNAME }}
+                  password: ${{ secrets.PASSWORD }}
+                  source: situations.sql
+                  target: /home/ubuntu/docker/portfolio/situations.sql
 
             - name: Transfer build.zip to VPS
               uses: appleboy/scp-action@master
@@ -35,7 +39,7 @@ jobs:
                   username: ${{ secrets.USERNAME }}
                   password: ${{ secrets.PASSWORD }}
                   source: build.zip
-                  target: /path/to/build.zip
+                  target: /home/ubuntu/build.zip
 
             - name: Deploy app to VPS
               uses: appleboy/ssh-action@master
@@ -45,7 +49,8 @@ jobs:
                   password: ${{ secrets.PASSWORD }}
                   script: |
                       cd /var/www/html
-                      rm -rf *
-                      unzip /path/to/build.zip
-                      cd app
-                      mysql -h ${{ secrets.DB_HOST }} -u ${{ secrets.DB_USERNAME }} -p${{ secrets.DB_PASSWORD }} < /path/to/sql/file.sql
+                      rm -rf build/
+                      unzip /home/ubuntu/build.zip
+                      cd /home/ubuntu/docker/portfolio
+                      docker-compose down -v
+                      docker-compose up -d --build
