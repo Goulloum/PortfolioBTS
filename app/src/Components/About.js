@@ -1,49 +1,34 @@
 import Ryan from "../img/ryanbg.jpg";
-import { useEffect, useState } from "react";
 import Timeline from "./Timeline";
 import Xarrow from "react-xarrows";
 
 function About() {
-  const value_timeline = ["2020-07-07", "2020-12-21", "2021-09-01"];
-
-  const description_timeline = [
-    "Optention du baccalauréat S option SI",
-    "CDD de 2 mois en tant qu'employé polyvant chez Géant Casino",
-    "-Debut du BTS SIO <br/> -Début de contrat d'apprentissage chez Alize SFL",
-  ];
-
-  return (
-    <div className="about-container">
-      <div className="about-me-container">
-        <div className="img-about-me-container">
-          <img
-            src={Ryan}
-            alt=""
-            className="about-me-picture"
-            id="about-me-picture"
-          />
-          <div className="img-about-me-text" id="img-about-me-text">
-            mon faciès
-          </div>
-          <Xarrow
-            start="img-about-me-text" //can be react ref
-            end="about-me-picture"
-            color="#000" //or an id
-          />
-        </div>
-        <div className="about-me-text">
-          <span>Bonjour !</span> <br />
-          Je suis un apprenti developpeur web et je suis en formation dans un
-          BTS SIO en alternance. Mon école est l'ISCIO et je suis actuellement
-          en option SLAM qui est l'option orientée pour les développeurs. Au
-          terme de ce diplôme j'aimerais me lancer en tant que développeur web.
-        </div>
-      </div>
-      <div className="experience-container">
-        <div className="main-title-about">Expériences</div>
-        <Timeline />
-      </div>
-      {/* <div className="bts-sio-container">
+    return (
+        <div className="about-container">
+            <div className="about-me-container">
+                <div className="img-about-me-container">
+                    <img src={Ryan} alt="" className="about-me-picture" id="about-me-picture" />
+                    <div className="img-about-me-text" id="img-about-me-text">
+                        mon faciès
+                    </div>
+                    <Xarrow
+                        start="img-about-me-text" //can be react ref
+                        end="about-me-picture"
+                        color="#000" //or an id
+                    />
+                </div>
+                <div className="about-me-text">
+                    <span>Bonjour !</span> <br />
+                    Je suis un apprenti developpeur web et je suis en formation dans un BTS SIO en alternance. Mon école est l'ISCIO et je suis
+                    actuellement en option SLAM qui est l'option orientée pour les développeurs. Au terme de ce diplôme j'aimerais me lancer en tant
+                    que développeur web.
+                </div>
+            </div>
+            <div className="experience-container">
+                <div className="main-title-about">Expériences</div>
+                <Timeline />
+            </div>
+            {/* <div className="bts-sio-container">
         <div className="main-title-about">Qu'est-ce que le BTS SIO ?</div>
         <div className="bts-sio-desc">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus vero
@@ -75,8 +60,8 @@ function About() {
           </div>
         </div>
       </div> */}
-    </div>
-  );
+        </div>
+    );
 }
 
 export default About;
