@@ -26,6 +26,7 @@ jobs:
               run: |
                   cd app
                   npm run build
+                  mv build build_2
 
             - name: Transfer sql to VPS
               uses: appleboy/scp-action@master
@@ -42,7 +43,7 @@ jobs:
                   host: ${{ secrets.HOST }}
                   username: ${{ secrets.USERNAME }}
                   password: ${{ secrets.PASSWORD }}
-                  source: "app/build"
+                  source: "app/build_2"
                   target: /home/ubuntu/
 
             - name: Deploy app to VPS
