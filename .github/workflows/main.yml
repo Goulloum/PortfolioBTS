@@ -1,0 +1,51 @@
+name: Deploy to VPS
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+
+            - name: Install dependencies
+              run: |
+                  cd app
+                  npm install
+
+            - name: Build React app
+              run: |
+                  cd app
+                  npm run build
+                  zip -r build.zip build
+
+            - name: Install MySQL client
+              run: |
+                  sudo apt-get update
+                  sudo apt-get install -y mysql-client
+
+            - name: Transfer build.zip to VPS
+              uses: appleboy/scp-action@master
+              with:
+                  host: ${{ secrets.HOST }}
+                  username: ${{ secrets.USERNAME }}
+                  password: ${{ secrets.PASSWORD }}
+                  source: build.zip
+                  target: /path/to/build.zip
+
+            - name: Deploy app to VPS
+              uses: appleboy/ssh-action@master
+              with:
+                  host: ${{ secrets.HOST }}
+                  username: ${{ secrets.USERNAME }}
+                  password: ${{ secrets.PASSWORD }}
+                  script: |
+                      cd /var/www/html
+                      rm -rf *
+                      unzip /path/to/build.zip
+                      cd app
+                      mysql -h ${{ secrets.DB_HOST }} -u ${{ secrets.DB_USERNAME }} -p${{ secrets.DB_PASSWORD }} < /path/to/sql/file.sql
