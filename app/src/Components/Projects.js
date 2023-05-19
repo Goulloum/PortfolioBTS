@@ -42,7 +42,7 @@ function Projects() {
     useEffect(() => {
         axios({
             method: "get",
-            url: "http://localhost:8080/api/situation/getAllSituations",
+            url: "http://51.83.42.45:8080/api/situation/getAllSituations",
         }).then((data) => {
             setProjects(data.data);
             setLoading(false);
