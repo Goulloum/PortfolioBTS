@@ -1,8 +1,8 @@
 import ProjectCard from "./ProjectCard";
 import { Link } from "react-router-dom";
 import { useEffect, useLayoutEffect, useState, useRef } from "react";
-import axios from "axios";
 import { useSpring, animated, easings } from "react-spring";
+import situations from "../situations.json";
 
 function Projects() {
     const [loading, setLoading] = useState(true);
@@ -40,13 +40,8 @@ function Projects() {
     }, [loading]);
 
     useEffect(() => {
-        axios({
-            method: "get",
-            url: "http://51.83.42.45:8080/api/situation/getAllSituations",
-        }).then((data) => {
-            setProjects(data.data);
-            setLoading(false);
-        });
+        setProjects(situations.data);
+        setLoading(false);
     }, []);
 
     if (loading) {
@@ -58,20 +53,21 @@ function Projects() {
                     <div className="project-container-title">Projets</div>
                 </animated.div>
                 <div className="grid-container-project" ref={domRef}>
-                    {projects.map((project, i) => (
-                        <Link key={project.id} to={{ pathname: "/Details", state: project }}>
-                            <animated.div style={anim}>
-                                <ProjectCard
-                                    key={project.id}
-                                    name={project.name}
-                                    desc={project.description}
-                                    langages={project.langages}
-                                    img={project.img}
-                                    date={project.date}
-                                />
-                            </animated.div>
-                        </Link>
-                    ))}
+                    {projects &&
+                        projects.map((project, i) => (
+                            <Link key={project.id} to={{ pathname: "/Details", state: project }}>
+                                <animated.div style={anim}>
+                                    <ProjectCard
+                                        key={project.id}
+                                        name={project.name}
+                                        desc={project.description}
+                                        langages={project.langages}
+                                        img={project.img}
+                                        date={project.date}
+                                    />
+                                </animated.div>
+                            </Link>
+                        ))}
                 </div>
             </div>
         );

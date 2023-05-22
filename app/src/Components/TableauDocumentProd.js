@@ -14,13 +14,13 @@ function TableauDocumentProd(props) {
             </div>
             <table className="table-document">
                 {table === "doc"
-                    ? props.project.documents.map((document, i) => (
+                    ? props.project.documents?.split(";").map((document, i) => (
                           <tr
                               key={i}
                               style={{
                                   backgroundColor: i % 2 === 0 ? "#cddae2" : "#D5E7F2",
                               }}>
-                              <Link to={"/files/" + props.project.name + "/documents/" + document} target="_blank" download key={i}>
+                              <Link to={"/files/" + props.project.name + "/documents/" + document} target="_blank" key={i}>
                                   <div key={i} className="click">
                                       {document}
                                       <span className="material-icons pdf-icon">picture_as_pdf</span>
@@ -28,7 +28,7 @@ function TableauDocumentProd(props) {
                               </Link>
                           </tr>
                       ))
-                    : props.project.productions.map((document, i) => (
+                    : props.project.productions?.split(";").map((document, i) => (
                           <tr
                               key={i}
                               style={{

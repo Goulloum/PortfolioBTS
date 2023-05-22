@@ -61,9 +61,6 @@ function App() {
                             <Link smooth={true} to="/Veille">
                                 <div className="veille-link">Veille</div>
                             </Link>
-                            <Link smooth={true} to="/Contact">
-                                <div className="contact-link">Contact</div>
-                            </Link>
                         </div>
                     </div>
                 </>

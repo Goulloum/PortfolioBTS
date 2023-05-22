@@ -1,12 +1,12 @@
-import Ryan from "../img/ryanbg.jpg";
+// import Ryan from "../img/ryanbg.jpg";
 import Timeline from "./Timeline";
-import Xarrow from "react-xarrows";
+// import Xarrow from "react-xarrows";
 
 function About() {
     return (
         <div className="about-container">
             <div className="about-me-container">
-                <div className="img-about-me-container">
+                {/* <div className="img-about-me-container">
                     <img src={Ryan} alt="" className="about-me-picture" id="about-me-picture" />
                     <div className="img-about-me-text" id="img-about-me-text">
                         mon faciès
@@ -16,7 +16,7 @@ function About() {
                         end="about-me-picture"
                         color="#000" //or an id
                     />
-                </div>
+                </div> */}
                 <div className="about-me-text">
                     <span>Bonjour !</span> <br />
                     Je suis un apprenti developpeur web et je suis en formation dans un BTS SIO en alternance. Mon école est l'ISCIO et je suis
